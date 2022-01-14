@@ -10,9 +10,11 @@ defres="1440x900"
 port=1 # 590<$port>
 name="virtual"
 
-read -p "Res (default 1440x900): " res
+read -p "Res (default $defres): " res
 if [ -z $res ]; then
     res=$defres
 fi
 
-vncserver -kill :$port; vncserver -geometry $res -name $name
+echo
+
+ssh $rhost "vncserver -kill :$port; vncserver -geometry $res -name $name"
