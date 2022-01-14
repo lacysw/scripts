@@ -1,11 +1,13 @@
 #/opt/homebrew/bin/bash
 
 # Description: Sends .tex file specified by arg[1] to $rhost for compilation;
-# requests .tex -> .pdf conversion via pdflatex and returns the built PDF.
+# requests .tex -> .pdf conversion via `pdflatex` and returns the built PDF.
 # Then, cleans the build directory on the remote machine. Logs conversion
 # process.
 
-# DEFINE REMOTE HOST AND REMOTE PATH HERE
+# Requires `pdflatex` accessable from PATH on remote host.
+
+# PARAMS
 rhost=sid@192.168.2.3
 rpath=/home/sid/tex
 
